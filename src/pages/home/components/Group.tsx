@@ -98,15 +98,16 @@ const GroupContainer = styled.div`
     gap: 10px;
   }
   .box {
-    /* width: 200px; */
     height: 40px;
     display: inline-block;
+    justify-content: center;
+    align-items: center;
     max-width: 100%; // 부모 컨테이너의 최대 넓이를 기준으로 설정
     white-space: nowrap; //텍스트가 한 줄에 나타나도록 함
     border-radius: 20px;
     border: 1px solid #000;
     background: #fff;
-    padding: 10px 22px;
+    padding: 8px 22px;
     .text {
       margin: 0;
       color: #000;
