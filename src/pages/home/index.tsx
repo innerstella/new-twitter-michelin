@@ -17,6 +17,7 @@ const HomePage = () => {
         <div className="margin35"></div>
         <Group />
         <div className="margin35"></div>
+
         <Banner />
         <div className="margin35"></div>
         <Content />
@@ -29,7 +30,7 @@ const HomePage = () => {
 export default HomePage;
 
 const MainContainer = styled.div`
-  width: 390px;
+  width: 100vw;
   height: 100%;
   padding: 0 25px;
   background-color: #fafafa;

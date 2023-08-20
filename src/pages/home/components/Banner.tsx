@@ -39,6 +39,6 @@ const BannerContainer = styled.div`
   .banner {
     height: 85px;
     border-radius: 10px;
-    width: 340px;
+    width: 100%;
   }
 `;
