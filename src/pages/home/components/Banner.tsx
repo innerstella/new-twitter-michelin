@@ -37,8 +37,8 @@ export default Banner;
 
 const BannerContainer = styled.div`
   .banner {
+    width: 340px;
     height: 85px;
     border-radius: 10px;
-    width: 100%;
   }
 `;

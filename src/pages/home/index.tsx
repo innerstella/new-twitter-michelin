@@ -17,8 +17,9 @@ const HomePage = () => {
         <div className="margin35"></div>
         <Group />
         <div className="margin35"></div>
-
-        <Banner />
+        <center>
+          <Banner />
+        </center>
         <div className="margin35"></div>
         <Content />
         <div className="margin120"></div>
