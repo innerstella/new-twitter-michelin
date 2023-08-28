@@ -11,7 +11,7 @@ const Header = () => {
         style={{ width: "25px" }}
         onClick={() =>
           window.open(
-            "https://maze-slouch-c9c.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?pvs=4"
+            "https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?pvs=4"
           )
         }
       >
