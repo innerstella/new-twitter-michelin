@@ -20,13 +20,13 @@ const Banner = () => {
     <BannerContainer>
       <Swiper {...bannerSettings}>
         <SwiperSlide>
+          <img className="banner" src="/assets/banner-do0.png" alt="배너" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img className="banner" src="/assets/banner-mino.jpeg" alt="배너" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="banner" src="/assets/banner-ksy.png" alt="배너" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="banner" src="/assets/banner-163wins.png" alt="배너" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="banner" src="/assets/banner-jang-1.jpeg" alt="배너" />
