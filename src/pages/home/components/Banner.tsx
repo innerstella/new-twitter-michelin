@@ -20,6 +20,9 @@ const Banner = () => {
     <BannerContainer>
       <Swiper {...bannerSettings}>
         <SwiperSlide>
+          <img className="banner" src="/assets/banner-bx.png" alt="배너" />
+        </SwiperSlide>
+        <SwiperSlide>
           <img className="banner" src="/assets/banner-do0.png" alt="배너" />
         </SwiperSlide>
         <SwiperSlide>
