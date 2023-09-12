@@ -1,4 +1,4 @@
-# 트위터 해시태그 기반 맛집 검색기
+# 트위터 맛집 검색기 (Ver 2.0)
 <div align=center>
 <br/>
  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
