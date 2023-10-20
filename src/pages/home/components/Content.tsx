@@ -18,7 +18,7 @@ const Content = () => {
             </p>
             <img className="img" src="/assets/hotpot.png" alt="hotpot" />
           </div>
-          <div
+          {/* <div
             className="box luck"
             onClick={() => window.open("https://happybaseball-diary.web.app/ ")}
           >
@@ -28,7 +28,7 @@ const Content = () => {
               복권
             </p>
             <img className="img" src="/assets/lottery.png" alt="lottery" />
-          </div>
+          </div> */}
           {/* <div className="box coming-soon">
             <p className="text">준비 중</p>
             <div className="img">
