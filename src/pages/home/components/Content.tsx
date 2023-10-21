@@ -18,36 +18,13 @@ const Content = () => {
             </p>
             <img className="img" src="/assets/hotpot.png" alt="hotpot" />
           </div>
-          {/* <div
+          <div
             className="box luck"
             onClick={() => window.open("https://happybaseball-diary.web.app/ ")}
           >
-            <p className="text">
-              야구 행운
-              <br />
-              복권
-            </p>
-            <img className="img" src="/assets/lottery.png" alt="lottery" />
-          </div> */}
-          {/* <div className="box coming-soon">
-            <p className="text">준비 중</p>
-            <div className="img">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="53"
-                height="53"
-                viewBox="0 0 53 53"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M26.4615 52.923C41.0758 52.923 52.923 41.0758 52.923 26.4615C52.923 11.8472 41.0758 0 26.4615 0C11.8472 0 0 11.8472 0 26.4615C0 41.0758 11.8472 52.923 26.4615 52.923ZM16.5384 23.1538H9.92306V29.7692H16.5384V23.1538ZM42.9999 23.1538H36.3846V29.7692H42.9999V23.1538ZM23.1538 23.1538H29.7692V29.7692H23.1538V23.1538Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-          </div> */}
+            <p className="text">직관 일기</p>
+            <img className="img" src="/assets/ball.png" alt="lottery" />
+          </div>
         </div>
       </div>
     </ContentContainer>
@@ -101,7 +78,7 @@ const ContentContainer = styled.div`
     }
   }
   .luck {
-    background-color: #87c26b;
+    background-color: #8d8d8d;
     .text {
       color: #fff;
       font-size: 18px;
@@ -111,9 +88,9 @@ const ContentContainer = styled.div`
       margin: 0;
     }
     .img {
-      width: 110px;
-      margin-left: 25px;
-      margin-top: -15px;
+      width: 70px;
+      margin-left: 35px;
+      margin-top: 15px;
     }
   }
   .coming-soon {
