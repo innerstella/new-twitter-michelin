@@ -62,7 +62,7 @@ const ContentContainer = styled.div`
     padding: 15px;
   }
   .hotpot {
-    background-color: #e15a24;
+    background-color: #853c00;
     .text {
       color: #fff;
       font-size: 18px;
