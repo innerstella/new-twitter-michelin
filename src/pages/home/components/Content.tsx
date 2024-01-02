@@ -62,7 +62,7 @@ const ContentContainer = styled.div`
     padding: 15px;
   }
   .hotpot {
-    background-color: #bc201e;
+    background-color: #e15a24;
     .text {
       color: #fff;
       font-size: 18px;
@@ -78,7 +78,7 @@ const ContentContainer = styled.div`
     }
   }
   .luck {
-    background-color: #8d8d8d;
+    background-color: #a22a2a;
     .text {
       color: #fff;
       font-size: 18px;

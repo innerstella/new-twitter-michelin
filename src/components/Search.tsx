@@ -112,7 +112,7 @@ const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     .info-text {
-      color: gray;
+      color: #4a5568;
       font-size: 14px;
     }
   }
