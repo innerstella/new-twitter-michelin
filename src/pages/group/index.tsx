@@ -1,17 +1,17 @@
-import { styled } from "styled-components";
-import Search from "../../components/Search";
-import Bar from "./components/Bar";
-import TagList from "./components/TagList";
-import Content from "../home/components/Content";
-import { useLocation } from "react-router-dom";
+import { styled } from "styled-components"
+import Search from "../../components/Search"
+import Bar from "./components/Bar"
+import TagList from "./components/TagList"
+import Content from "../home/components/Content"
+import { useLocation } from "react-router-dom"
+import Template from "../../templates"
 
 const GroupPage = () => {
-  const location = useLocation();
-  const group = location.state.group;
+  const location = useLocation()
+  const group = location.state.group
   return (
-    <>
+    <Template>
       <MainContainer>
-        <div className="margin60"></div>
         <Bar />
         <div className="margin50"></div>
         <Search page="group" group={group} />
@@ -19,16 +19,14 @@ const GroupPage = () => {
         <TagList group={group} />
         <div className="margin50"></div>
         <Content />
-        <div className="margin250"></div>
       </MainContainer>
-    </>
-  );
-};
+    </Template>
+  )
+}
 
-export default GroupPage;
+export default GroupPage
 
 const MainContainer = styled.div`
-  width: 390px;
   height: 100%;
   padding: 0 25px;
   background-color: #fafafa;
@@ -48,4 +46,4 @@ const MainContainer = styled.div`
   .margin250 {
     height: 250px;
   }
-`;
+`

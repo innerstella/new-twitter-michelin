@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 const Content = () => {
   return (
@@ -18,20 +18,20 @@ const Content = () => {
             </p>
             <img className="img" src="/assets/hotpot.png" alt="hotpot" />
           </div>
-          <div
+          {/* <div
             className="box luck"
             onClick={() => window.open("https://happybaseball-diary.web.app/ ")}
           >
             <p className="text">직관 일기</p>
             <img className="img" src="/assets/ball.png" alt="lottery" />
-          </div>
+          </div> */}
         </div>
       </div>
     </ContentContainer>
-  );
-};
+  )
+}
 
-export default Content;
+export default Content
 
 const ContentContainer = styled.div`
   .margin20 {
@@ -108,4 +108,4 @@ const ContentContainer = styled.div`
       margin-top: 35px;
     }
   }
-`;
+`

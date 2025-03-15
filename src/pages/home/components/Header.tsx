@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 const Header = () => {
   return (
@@ -32,15 +32,16 @@ const Header = () => {
         </svg>
       </div>
     </LogoContainer>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 20px;
   .title {
     color: #4a5568;
     font-size: 24px;
@@ -48,4 +49,4 @@ const LogoContainer = styled.div`
     font-weight: 600;
     line-height: normal;
   }
-`;
+`

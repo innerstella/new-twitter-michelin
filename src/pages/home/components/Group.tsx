@@ -1,39 +1,39 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
-import groupData from "../../../data/group.json";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import groupData from "../../../data/group.json"
+import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const Group = () => {
-  const navigate = useNavigate();
-  const [groupList, setGroupList] = useState<string[]>([]);
+  const navigate = useNavigate()
+  const [groupList, setGroupList] = useState<string[]>([])
 
   // 그룹 이름 출력
   useEffect(() => {
-    const tagList = groupData.map((elem) => elem.name);
-    setGroupList([...tagList]);
-  }, []);
+    const tagList = groupData.map((elem) => elem.name)
+    setGroupList([...tagList])
+  }, [])
 
   // 랜덤으로 섞기
   const shuffle = (arr: string[]) => {
-    let shuffled = arr.slice();
+    let shuffled = arr.slice()
     for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
     }
-    return shuffled;
-  };
+    return shuffled
+  }
 
   const clickShuffle = () => {
-    const origin = groupList.slice();
-    const shuffled = shuffle(origin);
-    setGroupList([...shuffled]);
-  };
+    const origin = groupList.slice()
+    const shuffled = shuffle(origin)
+    setGroupList([...shuffled])
+  }
 
   // 그룹 페이지로 이동
   const clickGroup = (elem: string) => {
-    navigate("/group", { state: { group: elem } });
-  };
+    navigate("/group", { state: { group: elem } })
+  }
 
   return (
     <GroupContainer>
@@ -67,14 +67,28 @@ const Group = () => {
         </div>
       </div>
     </GroupContainer>
-  );
-};
+  )
+}
 
-export default Group;
+export default Group
 
 const GroupContainer = styled.div`
   font-family: "SUIT", sans-serif;
-  /* width: 390px; */
+  /* 웹킷 브라우저(Chrome, Safari) */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+  }
+
+  /* Edge, IE */
+  * {
+    -ms-overflow-style: none;
+  }
+
   .flex-row {
     display: flex;
     flex-direction: row;
@@ -117,4 +131,4 @@ const GroupContainer = styled.div`
       line-height: normal;
     }
   }
-`;
+`

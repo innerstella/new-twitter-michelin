@@ -1,37 +1,36 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
-import Header from "./components/Header";
-import Search from "../../components/Search";
-import Group from "./components/Group";
-import Content from "./components/Content";
-import Banner from "./components/Banner";
+import Header from "./components/Header"
+import Search from "../../components/Search"
+import Group from "./components/Group"
+import Content from "./components/Content"
+import Banner from "./components/Banner"
+import Template from "../../templates"
 
 const HomePage = () => {
   return (
-    <>
+    <Template>
       <MainContainer>
-        <div className="margin60"></div>
         <Header />
-        <div className="margin60"></div>
+        <div className="margin60" />
         <Search page="home" />
-        <div className="margin35"></div>
+        <div className="margin35" />
         <Group />
-        <div className="margin35"></div>
+        <div className="margin35" />
         <center>
           <Banner />
         </center>
-        <div className="margin35"></div>
+        <div className="margin35" />
         <Content />
-        <div className="margin120"></div>
       </MainContainer>
-    </>
-  );
-};
+    </Template>
+  )
+}
 
-export default HomePage;
+export default HomePage
 
 const MainContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   padding: 0 25px;
   background-color: #fafafa;
@@ -51,4 +50,4 @@ const MainContainer = styled.div`
   .margin120 {
     height: 120px;
   }
-`;
+`

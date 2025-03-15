@@ -1,0 +1,36 @@
+import { ReactNode } from "react"
+import styled from "styled-components"
+
+interface TemplateProps {
+  children: ReactNode
+}
+
+const Template = ({ children }: TemplateProps) => {
+  return (
+    <Background>
+      <Content>{children}</Content>
+    </Background>
+  )
+}
+
+export default Template
+
+const Background = styled.div`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  @media (min-width: 400px) {
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+  }
+`
+const Content = styled.div`
+  display: flex;
+  width: 100%;
+
+  @media (min-width: 400px) {
+    width: 400px;
+  }
+`

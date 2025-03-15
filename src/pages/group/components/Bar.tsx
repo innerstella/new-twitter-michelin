@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom"
+import { styled } from "styled-components"
 
 const Bar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <>
       <BackBar onClick={() => navigate("/")}>
@@ -22,11 +22,12 @@ const Bar = () => {
         </svg>
       </BackBar>
     </>
-  );
-};
+  )
+}
 
-export default Bar;
+export default Bar
 
 const BackBar = styled.div`
   width: 25px;
-`;
+  padding-top: 20px;
+`

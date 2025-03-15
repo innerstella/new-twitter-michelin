@@ -1,46 +1,47 @@
-import { useState } from "react";
-import { styled } from "styled-components";
+import { FormEvent, useState } from "react"
+import { styled } from "styled-components"
 
-import { useToast } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react"
 
-import makeTotalLink from "../util/make-total-link";
-import makeGroupLink from "../util/make-group-link";
+import makeTotalLink from "../util/make-total-link"
+import makeGroupLink from "../util/make-group-link"
 
 type Props = {
-  page: "home" | "group";
-  group?: string;
-};
+  page: "home" | "group"
+  group?: string
+}
 
 const Search = ({ page, group }: Props) => {
-  const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("")
 
-  const toast = useToast();
+  const toast = useToast()
 
-  const onClickSearch = () => {
+  const onClickSearch = (e: FormEvent) => {
+    e.preventDefault()
+
     if (keyword === "") {
-      // alert("장소 또는 메뉴를 입력하세요!"); // 토스트 알림으로 교체
       toast({
         title: "장소 또는 메뉴를 입력하세요!",
         status: "error",
         duration: 2000,
         isClosable: true,
-      });
+      })
     } else {
       if (page === "home") {
-        makeTotalLink(keyword);
+        makeTotalLink(keyword)
       }
       if (page === "group" && group) {
-        makeGroupLink({ group: group, keyword: keyword });
+        makeGroupLink({ group: group, keyword: keyword })
       }
     }
-  };
+  }
 
   return (
     <SearchContainer>
       {page === "home" && <p className="text-home">무엇을 먹을까요?</p>}
       {page === "group" && <p className="text-group">#{group}</p>}
 
-      <div className="search-box">
+      <form className="search-box" onSubmit={onClickSearch}>
         <input
           className="input-box"
           placeholder="장소 또는 메뉴를 입력하세요!"
@@ -63,7 +64,7 @@ const Search = ({ page, group }: Props) => {
             />
           </svg>
         </div>
-      </div>
+      </form>
 
       <div className="info-container">
         <span className="material-symbols-outlined info-text">info</span>
@@ -72,10 +73,10 @@ const Search = ({ page, group }: Props) => {
         </span>
       </div>
     </SearchContainer>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
 
 const SearchContainer = styled.div`
   .text-home {
@@ -116,4 +117,4 @@ const SearchContainer = styled.div`
       font-size: 14px;
     }
   }
-`;
+`
