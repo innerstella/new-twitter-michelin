@@ -11,16 +11,9 @@ const Content = () => {
             className="box hotpot"
             onClick={() => window.open("https://hotpot-8c321.web.app")}
           >
-            <p className="text">훠궈 소스 백과사전</p>
+            <p className="text">하이디라오 소스 백과사전</p>
             <img className="img" src="/assets/hotpot.png" alt="hotpot" />
           </div>
-          {/* <div
-            className="box luck"
-            onClick={() => window.open("https://happybaseball-diary.web.app/ ")}
-          >
-            <p className="text">직관 일기</p>
-            <img className="img" src="/assets/ball.png" alt="lottery" />
-          </div> */}
         </div>
       </div>
     </ContentContainer>
@@ -58,6 +51,7 @@ const ContentContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
   }
   .hotpot {
     background-color: #853c00;

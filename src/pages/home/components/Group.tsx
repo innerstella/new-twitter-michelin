@@ -122,6 +122,7 @@ const GroupContainer = styled.div`
     border: 1px solid #000;
     background: #fff;
     padding: 8px 22px;
+    cursor: pointer;
     .text {
       margin: 0;
       color: #000;
