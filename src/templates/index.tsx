@@ -18,11 +18,11 @@ export default Template
 const Background = styled.div`
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  height: 100dvh;
 
   @media (min-width: 400px) {
     width: 100vw;
-    height: 100vh;
     background-color: gray;
   }
 `

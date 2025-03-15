@@ -31,7 +31,7 @@ export default HomePage
 
 const MainContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   padding: 0 25px;
   background-color: #fafafa;
   font-family: "SUIT", sans-serif;
