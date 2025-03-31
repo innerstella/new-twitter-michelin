@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import Search from "../../components/Search"
+import Search from "../../components/PlaceSearch"
 import Bar from "./components/Bar"
 import TagList from "./components/TagList"
 import Content from "../home/components/Content"

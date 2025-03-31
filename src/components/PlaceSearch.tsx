@@ -1,17 +1,17 @@
 import { FormEvent, useState } from "react"
 import { styled } from "styled-components"
-
 import { useToast } from "@chakra-ui/react"
-
 import makeTotalLink from "../util/make-total-link"
 import makeGroupLink from "../util/make-group-link"
+import { Title } from "./Title"
+import { SubTitle } from "./SubTitle"
 
 type Props = {
   page: "home" | "group"
   group?: string
 }
 
-const Search = ({ page, group }: Props) => {
+const PlaceSearch = ({ page, group }: Props) => {
   const [keyword, setKeyword] = useState("")
 
   const toast = useToast()
@@ -38,9 +38,8 @@ const Search = ({ page, group }: Props) => {
 
   return (
     <SearchContainer>
-      {page === "home" && <p className="text-home">무엇을 먹을까요?</p>}
-      {page === "group" && <p className="text-group">#{group}</p>}
-
+      {page === "home" && <Title>무엇을 먹을까요?</Title>}
+      {page === "group" && <SubTitle>#{group}</SubTitle>}
       <form className="search-box" onSubmit={onClickSearch}>
         <input
           className="input-box"
@@ -48,21 +47,7 @@ const Search = ({ page, group }: Props) => {
           onChange={(e) => setKeyword(e?.target.value)}
         />
         <div onClick={onClickSearch}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29"
-            height="29"
-            viewBox="0 0 29 29"
-            fill="none"
-          >
-            <path
-              d="M27 27L18.6667 18.6667M21.4444 11.7222C21.4444 17.0917 17.0917 21.4444 11.7222 21.4444C6.35279 21.4444 2 17.0917 2 11.7222C2 6.35279 6.35279 2 11.7222 2C17.0917 2 21.4444 6.35279 21.4444 11.7222Z"
-              stroke="#4A5568"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <img src="/assets/icon/search.svg" alt="검색" />
         </div>
       </form>
 
@@ -76,7 +61,7 @@ const Search = ({ page, group }: Props) => {
   )
 }
 
-export default Search
+export default PlaceSearch
 
 const SearchContainer = styled.div`
   .text-home {

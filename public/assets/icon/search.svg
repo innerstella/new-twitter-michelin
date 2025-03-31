@@ -1,0 +1,15 @@
+  <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29"
+            height="29"
+            viewBox="0 0 29 29"
+            fill="none"
+          >
+            <path
+              d="M27 27L18.6667 18.6667M21.4444 11.7222C21.4444 17.0917 17.0917 21.4444 11.7222 21.4444C6.35279 21.4444 2 17.0917 2 11.7222C2 6.35279 6.35279 2 11.7222 2C17.0917 2 21.4444 6.35279 21.4444 11.7222Z"
+              stroke="#4A5568"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>

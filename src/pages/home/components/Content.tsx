@@ -7,6 +7,7 @@ const Content = () => {
       <div className="margin20"></div>
       <div className="flex-row-container">
         <div className="flex-row">
+          {/* <Link to="/hotpot"> */}
           <div
             className="box hotpot"
             onClick={() => window.open("https://hotpot-8c321.web.app")}
@@ -14,6 +15,7 @@ const Content = () => {
             <p className="text">하이디라오 소스 백과사전</p>
             <img className="img" src="/assets/hotpot.png" alt="hotpot" />
           </div>
+          {/* </Link> */}
         </div>
       </div>
     </ContentContainer>
