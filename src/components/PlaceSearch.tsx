@@ -43,7 +43,7 @@ const PlaceSearch = ({ page, group }: Props) => {
       <form className="search-box" onSubmit={onClickSearch}>
         <input
           className="input-box"
-          placeholder="장소 또는 메뉴를 입력하세요!"
+          placeholder="장소 또는 메뉴를 입력하세요"
           onChange={(e) => setKeyword(e?.target.value)}
         />
         <div onClick={onClickSearch}>
