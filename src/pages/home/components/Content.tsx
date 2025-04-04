@@ -7,13 +7,16 @@ const Content = () => {
       <div className="margin20"></div>
       <div className="flex-row-container">
         <div className="flex-row">
+          <div className="box small-shop">
+            <p>소상공인 찾기 🔔</p>
+          </div>
           {/* <Link to="/hotpot"> */}
           <div
             className="box hotpot"
             onClick={() => window.open("https://hotpot-8c321.web.app")}
           >
-            <p className="text">하이디라오 소스 백과사전</p>
-            <img className="img" src="/assets/hotpot.png" alt="hotpot" />
+            <p>훠궈 소스 백과사전</p>
+            <img src="/assets/hotpot.png" alt="hotpot" />
           </div>
           {/* </Link> */}
         </div>
@@ -54,51 +57,28 @@ const ContentContainer = styled.div`
     align-items: center;
     gap: 10px;
     cursor: pointer;
-  }
-  .hotpot {
-    background-color: #853c00;
-    .text {
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    p {
       color: #fff;
       font-size: 16px;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
       margin: 0;
-    }
-    .img {
-      width: 30px;
-      height: 30px;
+      word-break: keep-all;
+      white-space: nowrap;
     }
   }
-  .luck {
-    background-color: #a22a2a;
-    .text {
-      color: #fff;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: normal;
-      margin: 0;
-    }
-    .img {
-      width: 70px;
-      margin-left: 35px;
-      margin-top: 15px;
-    }
+
+  .hotpot {
+    background-color: #853c00;
   }
-  .coming-soon {
-    background-color: #b8b8b8;
-    .text {
-      color: #fff;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: normal;
-      margin: 0;
-    }
-    .img {
-      margin-left: 55px;
-      margin-top: 35px;
-    }
+  .small-shop {
+    background-color: #27a383;
   }
 `

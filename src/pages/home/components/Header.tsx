@@ -2,6 +2,7 @@ import { styled } from "styled-components"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { SERVICE_TYPE, ServiceType } from "../../../types/service"
+import { Text } from "@radix-ui/themes"
 
 interface HeaderData {
   logoSrc: string
@@ -33,7 +34,9 @@ const Header = () => {
     <LogoContainer>
       <div className="left">
         <img src={HEADER_LIST[service].logoSrc} alt="로고" />
-        <span className="title">&nbsp; {HEADER_LIST[service].title}</span>
+        <Text size={"5"} weight={"bold"}>
+          &nbsp; {HEADER_LIST[service].title}
+        </Text>
       </div>
       {service === SERVICE_TYPE.MICHELIN && (
         <div
