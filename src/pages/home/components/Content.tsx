@@ -7,7 +7,10 @@ const Content = () => {
       <div className="margin20"></div>
       <div className="flex-row-container">
         <div className="flex-row">
-          <div className="box small-shop">
+          <div
+            className="box small-shop"
+            onClick={() => window.open("https://smallshop-archive.web.app/")}
+          >
             <p>소상공인 찾기 🔔</p>
           </div>
           {/* <Link to="/hotpot"> */}

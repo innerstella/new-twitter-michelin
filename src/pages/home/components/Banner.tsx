@@ -21,16 +21,6 @@ const Banner = () => {
     <BannerContainer>
       <Swiper {...bannerSettings}>
         <SwiperSlide>
-          <div>
-            <img
-              className="banner"
-              src="/assets/die.png"
-              alt="배너"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
           <Link
             to="https://youtube.com/@leejaehyun_ing?si=eELbbF09cnmp7ve0"
             target="_blank"

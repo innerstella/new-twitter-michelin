@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import styled from "styled-components"
+import DisplayAds from "../components/DisplayAd"
 
 interface TemplateProps {
   children: ReactNode
@@ -9,6 +10,7 @@ const Template = ({ children }: TemplateProps) => {
   return (
     <Background>
       <Content>{children}</Content>
+      <DisplayAds />
     </Background>
   )
 }

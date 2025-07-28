@@ -39,7 +39,10 @@ const Group = () => {
     <GroupContainer>
       <div className="flex-row">
         <p className="title">추천 먹시태그</p>
-        <div style={{ width: "15px" }} onClick={() => clickShuffle()}>
+        <div
+          style={{ width: "15px", cursor: "pointer" }}
+          onClick={() => clickShuffle()}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
