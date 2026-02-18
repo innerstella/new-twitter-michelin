@@ -1,3 +1,4 @@
+import { Link, Spacer } from '@chakra-ui/react';
 import { Badge, Callout, Flex, ScrollArea, Text } from '@radix-ui/themes';
 import { MainContainer } from '../../styles/main';
 import Template from '../../templates';
@@ -9,6 +10,18 @@ const LogPage = () => {
     <Template>
       <MainContainer>
         <Bar title="📝 업데이트 로그" />
+        <Callout.Root color="yellow" size="1" style={{ width: '100%' }}>
+          <Callout.Icon>✉️</Callout.Icon>
+          <Callout.Text>
+            <Link
+              href="https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?source=copy_link"
+              target="_blank"
+            >
+              <Text weight="bold">문의사항</Text>
+            </Link>
+          </Callout.Text>
+        </Callout.Root>
+        <Spacer height="20px" />
         <ScrollArea style={{ height: 'calc(100dvh - 150px)' }}>
           <Flex direction="row" gap="3" wrap="wrap">
             {LOG_DATA.map((log) => (
