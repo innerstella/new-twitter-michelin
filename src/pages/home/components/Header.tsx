@@ -1,60 +1,53 @@
-import { styled } from "styled-components"
-import { useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { SERVICE_TYPE, ServiceType } from "../../../types/service"
-import { Text } from "@radix-ui/themes"
+import { Text } from '@radix-ui/themes';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { styled } from 'styled-components';
+import { SERVICE_TYPE, ServiceType } from '../../../types/service';
 
 interface HeaderData {
-  logoSrc: string
-  title: string
+  logoSrc: string;
+  title: string;
 }
 
 const HEADER_LIST: Record<ServiceType, HeaderData> = {
   michelin: {
-    logoSrc: "/assets/icon/restaurant.svg",
-    title: "트위터 맛집 검색기",
+    logoSrc: '/assets/icon/restaurant.svg',
+    title: '트위터 맛집 검색기',
   },
   hotpot: {
-    logoSrc: "/assets/hotpot.png",
-    title: "하이디라오 소스 백과사전",
+    logoSrc: '/assets/hotpot.png',
+    title: '하이디라오 소스 백과사전',
   },
-} as const
+} as const;
 
 const Header = () => {
-  const location = useLocation()
-  const [service, setService] = useState<ServiceType>(SERVICE_TYPE.MICHELIN)
+  const location = useLocation();
+  const [service, setService] = useState<ServiceType>(SERVICE_TYPE.MICHELIN);
 
   useEffect(() => {
     setService(
-      location.pathname === "/" ? SERVICE_TYPE.MICHELIN : SERVICE_TYPE.HOTPOT
-    )
-  }, [location.pathname])
+      location.pathname === '/' ? SERVICE_TYPE.MICHELIN : SERVICE_TYPE.HOTPOT
+    );
+  }, [location.pathname]);
 
   return (
     <LogoContainer>
       <div className="left">
         <img src={HEADER_LIST[service].logoSrc} alt="로고" />
-        <Text size={"5"} weight={"bold"}>
+        <Text size={'5'} weight={'bold'}>
           &nbsp; {HEADER_LIST[service].title}
         </Text>
       </div>
       {service === SERVICE_TYPE.MICHELIN && (
-        <div
-          style={{ width: "25px" }}
-          onClick={() =>
-            window.open(
-              "https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?pvs=4"
-            )
-          }
-        >
+        <Link to="/log">
           <img src="/assets/icon/question.svg" alt="정보" />
-        </div>
+        </Link>
       )}
     </LogoContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 const LogoContainer = styled.div`
   display: flex;
@@ -77,4 +70,4 @@ const LogoContainer = styled.div`
       line-height: normal;
     }
   }
-`
+`;

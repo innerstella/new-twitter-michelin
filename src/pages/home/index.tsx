@@ -5,7 +5,6 @@ import { styled } from 'styled-components';
 import Search from '../../components/PlaceSearch';
 import Template from '../../templates';
 import Banner from './components/Banner';
-import Content from './components/Content';
 import Header from './components/Header';
 
 const HomePage = () => {
@@ -18,21 +17,42 @@ const HomePage = () => {
         <Spacer height="35px" />
         <Flex>
           <RadioCards.Root>
-            <Flex direction="row" justify="between" width="340px">
+            <Flex direction="row" justify="between" width="325px">
               <Link to="/group-list">
-                <RadioCards.Item value="group" style={{ width: '160px' }}>
+                <RadioCards.Item value="group" style={{ width: '150px' }}>
                   <Text size="2" weight="bold">
                     👀 그룹별로 보기
                   </Text>
                 </RadioCards.Item>
               </Link>
               <Link to="/recommend">
-                <RadioCards.Item value="recommend" style={{ width: '160px' }}>
+                <RadioCards.Item value="recommend">
                   <Text size="2" weight="bold">
                     ✨ 추천 해시태그 보기
                   </Text>
                 </RadioCards.Item>
               </Link>
+            </Flex>
+            <Flex direction="row" justify="between" width="325px">
+              <RadioCards.Item
+                value="smallshop"
+                style={{ width: '150px' }}
+                onClick={() =>
+                  window.open('https://smallshop-archive.web.app/')
+                }
+              >
+                <Text size="2" weight="bold">
+                  🔔 소상공인 찾기
+                </Text>
+              </RadioCards.Item>
+              <RadioCards.Item
+                value="sauce"
+                onClick={() => window.open('https://hotpot-8c321.web.app')}
+              >
+                <Text size="2" weight="bold">
+                  🍲 훠궈 소스 백과사전
+                </Text>
+              </RadioCards.Item>
             </Flex>
           </RadioCards.Root>
         </Flex>
@@ -40,8 +60,6 @@ const HomePage = () => {
         <center>
           <Banner />
         </center>
-        <Spacer height="35px" />
-        <Content />
       </MainContainer>
     </Template>
   );

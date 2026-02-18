@@ -1,4 +1,4 @@
-import { Badge, Flex } from '@radix-ui/themes';
+import { Badge, Flex, ScrollArea } from '@radix-ui/themes';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -44,18 +44,20 @@ const GroupListPage = () => {
             <img src="/assets/icon/search.svg" alt="검색" />
           </div>
         </SearchBox>
-        <Flex direction="row" gap="3" wrap="wrap">
-          {groupList.map((elem) => (
-            <Badge
-              variant="soft"
-              color="gray"
-              size="3"
-              onClick={() => clickGroup(elem)}
-            >
-              # {elem}
-            </Badge>
-          ))}
-        </Flex>
+        <ScrollArea style={{ height: 'calc(100dvh - 150px)' }}>
+          <Flex direction="row" gap="3" wrap="wrap">
+            {groupList.map((elem) => (
+              <Badge
+                variant="soft"
+                color="gray"
+                size="3"
+                onClick={() => clickGroup(elem)}
+              >
+                # {elem}
+              </Badge>
+            ))}
+          </Flex>
+        </ScrollArea>
       </MainContainer>
     </Template>
   );

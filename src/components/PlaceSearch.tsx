@@ -1,45 +1,43 @@
-import { FormEvent, useState } from "react"
-import { styled } from "styled-components"
-import { useToast } from "@chakra-ui/react"
-import makeTotalLink from "../util/make-total-link"
-import makeGroupLink from "../util/make-group-link"
-import { Title } from "./Title"
-import { SubTitle } from "./SubTitle"
+import { useToast } from '@chakra-ui/react';
+import { FormEvent, useState } from 'react';
+import { styled } from 'styled-components';
+import makeGroupLink from '../util/make-group-link';
+import makeTotalLink from '../util/make-total-link';
+import { Title } from './Title';
 
 type Props = {
-  page: "home" | "group"
-  group?: string
-}
+  page: 'home' | 'group';
+  group?: string;
+};
 
 const PlaceSearch = ({ page, group }: Props) => {
-  const [keyword, setKeyword] = useState("")
+  const [keyword, setKeyword] = useState('');
 
-  const toast = useToast()
+  const toast = useToast();
 
   const onClickSearch = (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (keyword === "") {
+    if (keyword === '') {
       toast({
-        title: "장소 또는 메뉴를 입력하세요!",
-        status: "error",
+        title: '장소 또는 메뉴를 입력하세요!',
+        status: 'error',
         duration: 2000,
         isClosable: true,
-      })
+      });
     } else {
-      if (page === "home") {
-        makeTotalLink(keyword)
+      if (page === 'home') {
+        makeTotalLink(keyword);
       }
-      if (page === "group" && group) {
-        makeGroupLink({ group: group, keyword: keyword })
+      if (page === 'group' && group) {
+        makeGroupLink({ group: group, keyword: keyword });
       }
     }
-  }
+  };
 
   return (
     <SearchContainer>
-      {page === "home" && <Title>무엇을 먹을까요?</Title>}
-      {page === "group" && <SubTitle>#{group}</SubTitle>}
+      {page === 'home' && <Title>무엇을 먹을까요?</Title>}
       <form className="search-box" onSubmit={onClickSearch}>
         <input
           className="input-box"
@@ -58,10 +56,10 @@ const PlaceSearch = ({ page, group }: Props) => {
         </span>
       </div>
     </SearchContainer>
-  )
-}
+  );
+};
 
-export default PlaceSearch
+export default PlaceSearch;
 
 const SearchContainer = styled.div`
   .text-home {
@@ -102,4 +100,4 @@ const SearchContainer = styled.div`
       font-size: 14px;
     }
   }
-`
+`;

@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { styled } from 'styled-components';
+import PlaceSearch from '../../components/PlaceSearch';
 import Template from '../../templates';
-import Content from '../home/components/Content';
 import Bar from './components/Bar';
 import TagList from './components/TagList';
 
@@ -13,9 +13,9 @@ const GroupPage = () => {
     <Template>
       <MainContainer>
         <Bar title={`# ${group}`} />
+        <PlaceSearch page="group" group={group} />
+        <div className="margin25" />
         <TagList group={group} />
-        <div className="margin50"></div>
-        <Content />
       </MainContainer>
     </Template>
   );
@@ -29,8 +29,8 @@ const MainContainer = styled.div`
   padding: 0 25px;
   background-color: #fafafa;
   font-family: 'SUIT', sans-serif;
-  .margin35 {
-    height: 35px;
+  .margin25 {
+    height: 25px;
   }
   .margin40 {
     height: 40px;
