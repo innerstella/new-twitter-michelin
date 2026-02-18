@@ -1,11 +1,24 @@
-import { useNavigate } from "react-router-dom"
-import { styled } from "styled-components"
+import { Flex, Text } from '@radix-ui/themes';
+import { useNavigate } from 'react-router-dom';
+import { styled } from 'styled-components';
 
-const Bar = () => {
-  const navigate = useNavigate()
+interface Props {
+  title?: string;
+}
+
+const Bar = ({ title }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <BackBar onClick={() => navigate("/")}>
+    <Flex
+      direction="row"
+      align="center"
+      justify="between"
+      width="100%"
+      mt="20px"
+      mb="20px"
+    >
+      <BackBar onClick={() => navigate(-1)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="26"
@@ -21,13 +34,20 @@ const Bar = () => {
           />
         </svg>
       </BackBar>
-    </>
-  )
-}
+      {title && (
+        <>
+          <Text size="5" weight="bold">
+            {title}
+          </Text>
+          <div style={{ width: '26px' }} />
+        </>
+      )}
+    </Flex>
+  );
+};
 
-export default Bar
+export default Bar;
 
 const BackBar = styled.div`
   width: 25px;
-  padding-top: 20px;
-`
+`;

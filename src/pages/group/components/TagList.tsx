@@ -1,5 +1,6 @@
-import { styled } from "styled-components";
-import GroupList from "../../../data/group.json";
+import { Badge, Flex } from '@radix-ui/themes';
+import { styled } from 'styled-components';
+import GroupList from '../../../data/group.json';
 
 type Props = {
   group: string;
@@ -8,19 +9,22 @@ const TagList = ({ group }: Props) => {
   const selectedGroup = GroupList.filter((elem) => elem.name === group);
   return (
     <TagContainer>
-      <p className="title">포함된 해시태그</p>
-      <div className="tag">
+      <Flex direction="row" gap="3" wrap="wrap">
         {selectedGroup[0].tag.map((elem) => {
-          return <span>{elem} &nbsp;</span>;
+          return (
+            <Badge variant="soft" color="gray" size="3">
+              {elem} &nbsp;
+            </Badge>
+          );
         })}
-      </div>
+      </Flex>
     </TagContainer>
   );
 };
 export default TagList;
 
 const TagContainer = styled.div`
-  font-family: "SUIT", sans-serif;
+  font-family: 'SUIT', sans-serif;
   .title {
     color: #000;
     font-size: 20px;

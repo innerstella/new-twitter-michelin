@@ -13,9 +13,10 @@ const Banner = () => {
     modules: [Autoplay, Pagination, Navigation],
     centeredSlides: true,
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       disableOnInteraction: false,
     },
+    infinite: true,
   }
   return (
     <BannerContainer>
