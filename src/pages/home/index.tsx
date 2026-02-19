@@ -5,6 +5,7 @@ import { styled } from 'styled-components';
 import Search from '../../components/PlaceSearch';
 import Template from '../../templates';
 import Banner from './components/Banner';
+import Coffee from './components/Coffee';
 import Header from './components/Header';
 
 const HomePage = () => {
@@ -56,6 +57,8 @@ const HomePage = () => {
             </Flex>
           </RadioCards.Root>
         </Flex>
+        <Spacer height="35px" />
+        <Coffee />
         <Spacer height="35px" />
         <center>
           <Banner />
