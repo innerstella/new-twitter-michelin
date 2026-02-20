@@ -16,7 +16,7 @@ const HomePage = () => {
         <Spacer height="60px" />
         <Search page="home" />
         <Spacer height="35px" />
-        <Flex>
+        <Flex width="350px" justify="center">
           <RadioCards.Root>
             <Flex direction="row" justify="between" width="325px">
               <Link to="/group-list">
