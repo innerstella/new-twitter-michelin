@@ -28,8 +28,8 @@ const RecommendPage = () => {
   };
 
   // 그룹 페이지로 이동
-  const clickGroup = (elem: string) => {
-    navigate('/group', { state: { group: elem } });
+  const clickGroup = (groupName: string) => {
+    navigate(`/group/${groupName}`, { state: { group: groupName } });
   };
 
   return (
@@ -62,7 +62,10 @@ const RecommendPage = () => {
         <ScrollArea style={{ height: 'calc(100dvh - 140px)' }}>
           <Flex direction="column" gap="3" wrap="wrap" mt="20px">
             {groupList.slice(0, 10).map((group) => (
-              <Card onClick={() => clickGroup(group.name)}>
+              <Card
+                onClick={() => clickGroup(group.name)}
+                style={{ cursor: 'pointer', width: '100%' }}
+              >
                 <Flex direction="column" gap="3" wrap="wrap">
                   <Text size="3" weight="bold">
                     📍 {group.name}
