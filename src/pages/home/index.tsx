@@ -1,5 +1,5 @@
 import { Spacer } from '@chakra-ui/react';
-import { Flex, RadioCards, Text } from '@radix-ui/themes';
+import { Badge, Callout, Flex, RadioCards, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Search from '../../components/PlaceSearch';
@@ -63,6 +63,17 @@ const HomePage = () => {
         <center>
           <Banner />
         </center>
+        <Spacer height="20px" />
+        <Callout.Root size="1" color="gray">
+          <Flex direction="row" gap="2" align="center">
+            <Callout.Icon>
+              <Badge size="1">1.2.1</Badge>
+            </Callout.Icon>
+            <Callout.Text size="1">
+              추천 해시태그가 섞이지 않는 버그가 수정되었습니다.
+            </Callout.Text>
+          </Flex>
+        </Callout.Root>
       </MainContainer>
     </Template>
   );

@@ -8,9 +8,8 @@ import Bar from '../group/components/Bar';
 
 const RecommendPage = () => {
   const navigate = useNavigate();
-  const [groupList, setGroupList] = useState<{ name: string; tag: string[] }[]>(
-    groupData.slice(0, 10)
-  );
+  const [groupList, setGroupList] =
+    useState<{ name: string; tag: string[] }[]>(groupData);
 
   // 랜덤으로 섞기
   const shuffle = (arr: { name: string; tag: string[] }[]) => {

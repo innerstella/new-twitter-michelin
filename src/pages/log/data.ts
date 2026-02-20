@@ -1,4 +1,10 @@
-const LOG_DATA = [
+export const LOG_DATA = [
+  {
+    date: '2026/02/20',
+    version: '1.2.1',
+    type: 'fix',
+    changes: '추천 해시태그가 섞이지 않는 버그가 수정되었습니다.',
+  },
   {
     date: '2026/02/19',
     version: '1.2.0',

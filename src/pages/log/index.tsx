@@ -6,6 +6,16 @@ import Bar from '../group/components/Bar';
 import LOG_DATA from './data';
 
 const LogPage = () => {
+  const getColor = (type: string) => {
+    switch (type) {
+      case 'feature':
+        return 'gray';
+      case 'fix':
+        return 'red';
+      default:
+        return 'gray';
+    }
+  };
   return (
     <Template>
       <MainContainer>
@@ -28,7 +38,7 @@ const LogPage = () => {
               <Callout.Root
                 key={log.date}
                 variant="outline"
-                color={log.type === 'feature' ? 'gray' : 'yellow'}
+                color={getColor(log.type)}
                 size="2"
                 style={{ width: '100%' }}
               >
