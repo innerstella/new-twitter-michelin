@@ -11,8 +11,8 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recommend" element={<RecommendPage />} />
-        <Route path="/group" element={<GroupPage />} />
         <Route path="/group-list" element={<GroupListPage />} />
+        <Route path="/group/:name" element={<GroupPage />} />
         <Route path="/log" element={<LogPage />} />
         {/* <Route path="/hotpot" element={<HotpotPage />} /> */}
       </Routes>
