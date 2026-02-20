@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint-config-prettier": "^10.1.8",
     "postcss-preset-env": "^10.1.6",
     "prettier": "^3.8.1"
