@@ -17,8 +17,8 @@ const GroupListPage = () => {
   }, []);
 
   // 그룹 페이지로 이동
-  const clickGroup = (elem: string) => {
-    navigate('/group', { state: { group: elem } });
+  const clickGroup = (groupName: string) => {
+    navigate(`/group/${groupName}`, { state: { group: groupName } });
   };
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
