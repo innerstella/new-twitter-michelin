@@ -66,10 +66,6 @@ const Rank = styled.span`
   min-width: 20px;
 `;
 
-const Keyword = styled.span`
-  color: #ae2f1e;
-`;
-
 const ViewCount = styled.span`
   font-size: 13px;
   color: #888;

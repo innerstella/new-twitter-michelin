@@ -58,10 +58,6 @@ const SrcRow = styled.div`
   font-size: 14px;
 `;
 
-const Keyword = styled.span`
-  color: #ae2f1e;
-`;
-
 const ViewCount = styled.span`
   font-size: 13px;
   color: #888;
