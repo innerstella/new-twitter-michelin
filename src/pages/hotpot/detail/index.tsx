@@ -1,10 +1,10 @@
-import { CheckboxGroup } from '@radix-ui/themes';
+import { Badge, CheckboxGroup } from '@radix-ui/themes';
 import { doc, getDoc, increment, updateDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Template from '../../../templates';
-import Header from '../../home/components/Header';
+import Bar from '../../group/components/Bar';
 import { db } from '../fbase';
 import { Recipe } from '../types';
 
@@ -51,11 +51,10 @@ const HotpotDetailPage = () => {
   return (
     <Template>
       <Wrapper>
-        <Header />
-        <Card>
-          <Name>{recipe?.name}</Name>
-          <KeywordBadge>#{recipe?.keyword}</KeywordBadge>
-        </Card>
+        <Bar title={recipe?.name} />
+        <Badge size="2" color="gray">
+          #{recipe?.keyword}
+        </Badge>
         <Section>
           <SectionTitle>🥢 RECIPE 🥢</SectionTitle>
           <Instruction>재료를 클릭하면 체크할 수 있어요!</Instruction>
@@ -67,13 +66,6 @@ const HotpotDetailPage = () => {
             ))}
           </CheckboxGroup.Root>
         </Section>
-
-        <ButtonRow>
-          <BackBtn onClick={() => navigate(-1)}>← 뒤로</BackBtn>
-          <ShareBtn onClick={handleShare}>
-            {copied ? '✓ 복사됨' : '🔗 공유하기'}
-          </ShareBtn>
-        </ButtonRow>
       </Wrapper>
     </Template>
   );
