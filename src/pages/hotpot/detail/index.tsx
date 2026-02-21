@@ -1,7 +1,7 @@
 import { Badge, CheckboxGroup } from '@radix-ui/themes';
 import { doc, getDoc, increment, updateDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Template from '../../../templates';
 import Bar from '../../group/components/Bar';
@@ -10,9 +10,7 @@ import { Recipe } from '../types';
 
 const HotpotDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
-  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -41,12 +39,6 @@ const HotpotDetailPage = () => {
     };
     fetchDetail();
   }, [id]);
-
-  const handleShare = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <Template>
@@ -82,26 +74,6 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const Card = styled.div`
-  margin-top: 24px;
-  padding: 24px;
-  background: linear-gradient(90deg, #bc1d1b 0%, rgba(188, 29, 27, 0.85) 100%);
-  border-radius: 16px;
-  color: #fff;
-`;
-
-const Name = styled.h2`
-  margin: 0 0 8px;
-  font-size: 22px;
-  font-weight: 700;
-`;
-
-const KeywordBadge = styled.span`
-  font-size: 14px;
-  font-weight: 300;
-  opacity: 0.9;
-`;
-
 const Section = styled.div`
   margin-top: 28px;
 `;
@@ -116,30 +88,4 @@ const Instruction = styled.p`
   font-size: 13px;
   color: #888;
   margin-bottom: 16px;
-`;
-
-const ButtonRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 32px;
-`;
-
-const BackBtn = styled.button`
-  background: none;
-  border: none;
-  font-family: 'SUIT', sans-serif;
-  font-size: 14px;
-  color: #555;
-  cursor: pointer;
-`;
-
-const ShareBtn = styled.button`
-  padding: 10px 20px;
-  background: #bc1d1b;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-family: 'SUIT', sans-serif;
-  font-size: 14px;
-  cursor: pointer;
 `;

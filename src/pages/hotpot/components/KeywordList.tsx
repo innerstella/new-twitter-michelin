@@ -1,3 +1,4 @@
+import { Badge, Flex } from '@radix-ui/themes';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -35,13 +36,15 @@ const KeywordList = () => {
     <Wrapper>
       <KeyNav>
         {KEYWORDS.map((k) => (
-          <KeyBtn
+          <Badge
             key={k.value}
-            $active={selected === k.value}
             onClick={() => setSelected(k.value)}
+            color="red"
+            size="3"
+            variant={selected === k.value ? 'solid' : 'outline'}
           >
             {k.label}
-          </KeyBtn>
+          </Badge>
         ))}
       </KeyNav>
       <List>
@@ -51,10 +54,10 @@ const KeywordList = () => {
               to={`/hotpot/detail/${src.id}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              <span>
-                {src.name}
-                <KeywordTag> #{src.keyword}</KeywordTag>
-              </span>
+              <Flex direction="row" gap="2" align="center">
+                <span>{src.name}</span>
+                <Badge> #{src.keyword}</Badge>
+              </Flex>
             </Link>
             <ViewCount>👀 {src.view.toLocaleString()}</ViewCount>
           </SrcRow>
@@ -71,20 +74,12 @@ const Wrapper = styled.div``;
 const KeyNav = styled.div`
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
   margin-bottom: 16px;
-`;
+  overflow-x: auto;
 
-const KeyBtn = styled.button<{ $active: boolean }>`
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid ${({ $active }) => ($active ? '#bc1d1b' : '#d9d9d9')};
-  background: ${({ $active }) => ($active ? '#bc1d1b' : '#fff')};
-  color: ${({ $active }) => ($active ? '#fff' : '#333')};
-  font-family: 'SUIT', sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.15s;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const List = styled.div`

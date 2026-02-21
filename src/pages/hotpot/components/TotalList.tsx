@@ -1,3 +1,4 @@
+import { Badge, Flex } from '@radix-ui/themes';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -28,10 +29,10 @@ const TotalList = () => {
             to={`/hotpot/detail/${src.id}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <span>
-              {src.name}
-              <Keyword> #{src.keyword}</Keyword>
-            </span>
+            <Flex direction="row" gap="2" align="center">
+              <span>{src.name}</span>
+              <Badge> #{src.keyword}</Badge>
+            </Flex>
           </Link>
           <ViewCount>👀 {src.view.toLocaleString()}</ViewCount>
         </SrcRow>
