@@ -46,14 +46,13 @@ const HomePage = () => {
                   🔔 소상공인 찾기
                 </Text>
               </RadioCards.Item>
-              <RadioCards.Item
-                value="sauce"
-                onClick={() => window.open('https://hotpot-8c321.web.app')}
-              >
-                <Text size="2" weight="bold">
-                  🍲 훠궈 소스 백과사전
-                </Text>
-              </RadioCards.Item>
+              <Link to="/hotpot">
+                <RadioCards.Item value="sauce">
+                  <Text size="2" weight="bold">
+                    🍲 훠궈 소스 백과사전
+                  </Text>
+                </RadioCards.Item>
+              </Link>
             </Flex>
           </RadioCards.Root>
         </Flex>
