@@ -12,7 +12,6 @@ const HotpotDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
-  const [checked, setChecked] = useState<Set<number>>(new Set());
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -42,14 +41,6 @@ const HotpotDetailPage = () => {
     };
     fetchDetail();
   }, [id]);
-
-  const toggleIngredient = (index: number) => {
-    setChecked((prev) => {
-      const next = new Set(prev);
-      next.has(index) ? next.delete(index) : next.add(index);
-      return next;
-    });
-  };
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
