@@ -19,7 +19,8 @@ export default Template
 
 const Background = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   overflow-x: hidden;
   height: 100dvh;
 
