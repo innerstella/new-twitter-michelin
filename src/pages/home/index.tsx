@@ -1,5 +1,5 @@
 import { Spacer } from '@chakra-ui/react';
-import { Badge, Callout, Flex, RadioCards, Text } from '@radix-ui/themes';
+import { Flex, RadioCards, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Search from '../../components/PlaceSearch';
@@ -7,6 +7,7 @@ import Template from '../../templates';
 import Banner from './components/Banner';
 import Coffee from './components/Coffee';
 import Header from './components/Header';
+import Noti from './components/Noti';
 
 const HomePage = () => {
   return (
@@ -46,14 +47,13 @@ const HomePage = () => {
                   🔔 소상공인 찾기
                 </Text>
               </RadioCards.Item>
-              <RadioCards.Item
-                value="sauce"
-                onClick={() => window.open('https://hotpot-8c321.web.app')}
-              >
-                <Text size="2" weight="bold">
-                  🍲 훠궈 소스 백과사전
-                </Text>
-              </RadioCards.Item>
+              <Link to="/hotpot">
+                <RadioCards.Item value="sauce">
+                  <Text size="2" weight="bold">
+                    🍲 훠궈 소스 백과사전
+                  </Text>
+                </RadioCards.Item>
+              </Link>
             </Flex>
           </RadioCards.Root>
         </Flex>
@@ -64,16 +64,7 @@ const HomePage = () => {
           <Banner />
         </center>
         <Spacer height="20px" />
-        <Callout.Root size="1" color="gray">
-          <Flex direction="row" gap="2" align="center">
-            <Callout.Icon>
-              <Badge size="1">1.2.1</Badge>
-            </Callout.Icon>
-            <Callout.Text size="1">
-              추천 해시태그가 섞이지 않는 버그가 수정되었습니다.
-            </Callout.Text>
-          </Flex>
-        </Callout.Root>
+        <Noti />
       </MainContainer>
     </Template>
   );

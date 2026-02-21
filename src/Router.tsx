@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GroupPage from './pages/group';
 import GroupListPage from './pages/group-list';
+import HotpotDetailPage from './pages/hotpot/detail';
+import HotpotPage from './pages/hotpot';
 import HomePage from './pages/home';
 import LogPage from './pages/log';
 import RecommendPage from './pages/recommend';
@@ -14,7 +16,8 @@ const AppRouter = () => {
         <Route path="/group-list" element={<GroupListPage />} />
         <Route path="/group/:name" element={<GroupPage />} />
         <Route path="/log" element={<LogPage />} />
-        {/* <Route path="/hotpot" element={<HotpotPage />} /> */}
+        <Route path="/hotpot" element={<HotpotPage />} />
+        <Route path="/hotpot/detail/:id" element={<HotpotDetailPage />} />
       </Routes>
     </BrowserRouter>
   );

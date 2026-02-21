@@ -1,5 +1,12 @@
 export const LOG_DATA = [
   {
+    date: '2026/02/21',
+    version: '1.2.2',
+    type: 'feature',
+    changes:
+      '외부 페이지 이동 없이 훠궈 소스 백과사전을 볼 수 있도록 수정되었습니다.',
+  },
+  {
     date: '2026/02/20',
     version: '1.2.1',
     type: 'fix',

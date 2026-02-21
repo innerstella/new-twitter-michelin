@@ -8,7 +8,7 @@ const Noti = () => {
 
   return (
     <Callout.Root size="1" color="gray">
-      <Flex direction="row" gap="2" align="center">
+      <Flex direction="row" gap="2" align="start">
         <Callout.Icon>
           <Badge size="1">{version}</Badge>
         </Callout.Icon>
