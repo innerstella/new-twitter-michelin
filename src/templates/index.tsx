@@ -9,8 +9,10 @@ interface TemplateProps {
 const Template = ({ children }: TemplateProps) => {
   return (
     <Background>
-      <Content>{children}</Content>
-      <DisplayAds />
+      <Content>
+        {children}
+        <DisplayAds />
+      </Content>
     </Background>
   )
 }
