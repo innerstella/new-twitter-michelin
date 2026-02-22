@@ -8,7 +8,7 @@ import { Keyword, Recipe } from '../types';
 
 const KEYWORDS: { label: string; value: Keyword }[] = [
   { label: '🌶 매콤', value: '매콤' },
-  { label: '🧂 짭짤', value: '짭짤' },
+  { label: '🧂 짭잘', value: '짭잘' },
   { label: '🍋 새콤', value: '새콤' },
   { label: '🍯 달콤', value: '달콤' },
   { label: '🥜 고소', value: '고소' },
