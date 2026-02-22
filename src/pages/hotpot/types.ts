@@ -1,4 +1,4 @@
-export type Keyword = "매콤" | "짭짤" | "새콤" | "달콤" | "고소";
+export type Keyword = '매콤' | '짭잘' | '새콤' | '달콤' | '고소';
 
 export interface Recipe {
   id: string;
