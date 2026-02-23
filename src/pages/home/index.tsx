@@ -74,7 +74,7 @@ const HomePage = () => {
               소상공인이 운영하는 가게 홍보 배너를 게시해드립니다!
               <br />
               <ChakraLink
-                href="https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?source=copy_link"
+                href="https://open.kakao.com/o/swA9S8Ud"
                 target="_blank"
                 textDecoration="underline"
               >
