@@ -1,4 +1,4 @@
-import { Spacer } from '@chakra-ui/react';
+import { Link as ChakraLink, Spacer } from '@chakra-ui/react';
 import { Flex, RadioCards, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
@@ -10,6 +10,8 @@ import Header from './components/Header';
 import Noti from './components/Noti';
 
 const HomePage = () => {
+  // const { version, changes } = LOG_DATA[0];
+
   return (
     <Template>
       <MainContainer>
@@ -64,7 +66,23 @@ const HomePage = () => {
           <Banner />
         </center>
         <Spacer height="20px" />
-        <Noti />
+        {/* <Noti badgeText={version} text={changes} /> */}
+        <Noti
+          badgeText="이벤트"
+          text={
+            <Text>
+              소상공인이 운영하는 가게 홍보 배너를 게시해드립니다!
+              <br />
+              <ChakraLink
+                href="https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?source=copy_link"
+                target="_blank"
+                textDecoration="underline"
+              >
+                🔗 문의 링크
+              </ChakraLink>
+            </Text>
+          }
+        />
       </MainContainer>
     </Template>
   );
