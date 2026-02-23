@@ -8,7 +8,7 @@ export const BANNER_LIST = [
   {
     id: 2,
     image: '/assets/banner/tomaru.webp',
-    link: 'https://naver.me/FY3ygmDt',
+    link: 'https://naver.me/xP8m35A2',
     name: '토마루해물칼국수',
   },
 ];
