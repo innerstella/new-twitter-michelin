@@ -1,18 +1,21 @@
 import { Badge, Callout } from '@radix-ui/themes';
 
 import { Flex } from '@radix-ui/themes';
-import LOG_DATA from '../../log/data';
+import { ReactElement } from 'react';
 
-const Noti = () => {
-  const { version, changes } = LOG_DATA[0];
+interface NotiData {
+  badgeText: string;
+  text: ReactElement;
+}
 
+const Noti = ({ badgeText, text }: NotiData) => {
   return (
     <Callout.Root size="1" color="gray">
       <Flex direction="row" gap="2" align="start">
         <Callout.Icon>
-          <Badge size="1">{version}</Badge>
+          <Badge size="1">{badgeText}</Badge>
         </Callout.Icon>
-        <Callout.Text size="1">{changes}</Callout.Text>
+        <Callout.Text size="1">{text}</Callout.Text>
       </Flex>
     </Callout.Root>
   );

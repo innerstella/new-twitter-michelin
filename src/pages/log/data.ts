@@ -1,5 +1,11 @@
 export const LOG_DATA = [
   {
+    date: '2026/02/23',
+    version: '1.3.0',
+    type: 'feature',
+    changes: '가게 홍보 배너가 추가되었습니다.',
+  },
+  {
     date: '2026/02/21',
     version: '1.2.2',
     type: 'feature',
