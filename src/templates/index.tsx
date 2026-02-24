@@ -4,14 +4,15 @@ import DisplayAds from "../components/DisplayAd"
 
 interface TemplateProps {
   children: ReactNode
+  showAd?: boolean
 }
 
-const Template = ({ children }: TemplateProps) => {
+const Template = ({ children, showAd = true }: TemplateProps) => {
   return (
     <Background>
       <Content>
         {children}
-        <DisplayAds />
+        {showAd && <DisplayAds />}
       </Content>
     </Background>
   )
@@ -33,6 +34,7 @@ const Background = styled.div`
 `
 const Content = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
 
   @media (min-width: 400px) {

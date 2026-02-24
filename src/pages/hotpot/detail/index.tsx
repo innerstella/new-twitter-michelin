@@ -11,6 +11,7 @@ import { Recipe } from '../types';
 const HotpotDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
@@ -36,12 +37,13 @@ const HotpotDetailPage = () => {
         });
         await updateDoc(ref, { view: increment(1) });
       }
+      setLoading(false);
     };
     fetchDetail();
   }, [id]);
 
   return (
-    <Template>
+    <Template showAd={!loading && recipe !== null}>
       <Wrapper>
         <Bar title={recipe?.name} />
         <Badge size="2" color="gray">
