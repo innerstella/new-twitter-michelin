@@ -8,12 +8,14 @@ import Banner from './components/Banner';
 import Coffee from './components/Coffee';
 import Header from './components/Header';
 import Noti from './components/Noti';
+import PopupBanner from './components/PopupBanner';
 
 const HomePage = () => {
   // const { version, changes } = LOG_DATA[0];
 
   return (
     <Template>
+      <PopupBanner />
       <MainContainer>
         <Header />
         <Spacer height="60px" />
