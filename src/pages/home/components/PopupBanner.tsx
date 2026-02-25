@@ -7,7 +7,6 @@ const EXPIRE_DATE = '2026-02-25 23:59:59';
 
 const PopupBanner = () => {
   const [visible, setVisible] = useState(true);
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleClose = () => {
     setVisible(false);
@@ -31,14 +30,7 @@ const PopupBanner = () => {
     <Overlay onClick={handleClose}>
       <Modal onClick={(e) => e.stopPropagation()}>
         <ImageWrapper onClick={handleLink}>
-          {!imageLoaded && <Skeleton />}
-          <img
-            src={POPUP_IMAGE}
-            width={806}
-            height={1140}
-            alt="팝업 배너"
-            onLoad={() => setImageLoaded(true)}
-          />
+          <img src={POPUP_IMAGE} width={806} height={1140} alt="팝업 배너" />
         </ImageWrapper>
         <ButtonRow>
           <ActionButton onClick={handleLink}>축하하러 가기 🥳</ActionButton>
@@ -78,23 +70,6 @@ const ImageWrapper = styled.div`
     width: 100%;
     display: block;
   }
-`;
-
-const shimmer = `
-  @keyframes shimmer {
-    0% { background-position: -320px 0; }
-    100% { background-position: 320px 0; }
-  }
-`;
-
-const Skeleton = styled.div`
-  ${shimmer}
-  width: 100%;
-  height: 450px;
-  aspect-ratio: 1 / 1;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 640px 100%;
-  animation: shimmer 1.4s infinite linear;
 `;
 
 const ButtonRow = styled.div`
