@@ -14,6 +14,10 @@ const PopupBanner = () => {
   };
 
   const handleLink = () => {
+    window.gtag?.('event', 'popup_banner_click', {
+      event_category: 'popup',
+      event_label: 'bx_banner',
+    });
     window.open(POPUP_LINK, '_blank');
   };
 
