@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 const POPUP_LINK = 'https://x.com/bboeverbx/status/2022687295560970288?s=20';
 const POPUP_IMAGE = '/assets/pop-up/bx.webp';
-const EXPIRE_DATE = '2026-02-25 23:59:59';
+const EXPIRE_DATE = '2026-03-05 23:59:59';
 
 const PopupBanner = () => {
   const [visible, setVisible] = useState(true);
