@@ -41,7 +41,8 @@
     "waitUntil": "networkidle0",
     "headless": true,
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "chromePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    "chromePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "skipThirdPartyRequests": true
   },
   "eslintConfig": {
     "extends": [
