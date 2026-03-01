@@ -14,7 +14,7 @@ interface Props {
   isLoading: boolean;
 }
 
-const SHEET_HEIGHT = 600;
+const SHEET_HEIGHT = 550;
 const PEEK_RATIO = 0.35; // 접혔을 때 뷰포트의 30% 만큼 보임
 
 const getCollapsedY = () =>
@@ -82,7 +82,9 @@ const ShopListSheet = ({ shops, isLoading }: Props) => {
               : shops.map((shop) => (
                   <div
                     key={shop.id}
-                    ref={(el) => { cardRefs.current[shop.id] = el; }}
+                    ref={(el) => {
+                      cardRefs.current[shop.id] = el;
+                    }}
                   >
                     <Spacer height="10px" />
                     <ShopCard shop={shop} isOffline={isOffline} />

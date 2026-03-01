@@ -4,7 +4,6 @@ import { useShopFilterStore } from '../../store/shopFilterStore';
 import { MainContainer } from '../../styles/main';
 import Template from '../../templates';
 import Bar from '../group/components/Bar';
-import Banner from '../home/components/Banner';
 import Noti from '../home/components/Noti';
 import { ServiceMode } from './components';
 import CategoryNav from './components/category-nav';
@@ -49,8 +48,6 @@ const SmallShopPage = () => {
           }
         />
         <Spacer height="10px" />
-        <Banner />
-        <Spacer height="20px" />
         <Flex justify="between" align="center">
           <ServiceMode />
           <Flex align="center" gap="2">
