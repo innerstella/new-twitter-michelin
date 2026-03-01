@@ -2,6 +2,12 @@ import { Link } from '@chakra-ui/react';
 
 export const LOG_DATA = [
   {
+    date: '2026/03/02',
+    version: '1.4.0',
+    type: 'feature',
+    changes: '[소상공인 가게 찾기] 지도 기능이 추가되었습니다.',
+  },
+  {
     date: '2026/03/01',
     version: '1.3.2',
     type: 'feature',
