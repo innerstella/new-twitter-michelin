@@ -30,6 +30,8 @@ jobs:
           REACT_APP_HOTPOT_FIREBASE_MEASUREMENT_ID: ${{ secrets.REACT_APP_HOTPOT_FIREBASE_MEASUREMENT_ID }}
           REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
           REACT_APP_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.REACT_APP_SUPABASE_PUBLISHABLE_KEY }}
+          REACT_APP_KAKAO_MAP_REST_API_KEY: ${{ secrets.REACT_APP_KAKAO_MAP_REST_API_KEY }}
+          REACT_APP_KAKAO_MAP_JS_API_KEY: ${{ secrets.REACT_APP_KAKAO_MAP_JS_API_KEY }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

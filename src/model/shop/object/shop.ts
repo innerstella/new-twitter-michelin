@@ -9,4 +9,6 @@ export interface Shop {
   site_url?: string;
   twitter_url?: string;
   map_url?: string;
+  latitude?: number;
+  longitude?: number;
 }

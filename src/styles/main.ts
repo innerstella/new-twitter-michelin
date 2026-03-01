@@ -6,6 +6,7 @@ export const MainContainer = styled.div`
   padding: 0 25px;
   background-color: #fafafa;
   font-family: 'SUIT', sans-serif;
+
   .margin35 {
     height: 35px;
   }
