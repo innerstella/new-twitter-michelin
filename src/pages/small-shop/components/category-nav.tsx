@@ -31,6 +31,7 @@ const CategoryNav = () => {
 
   useEffect(() => {
     setCurrCategory(Object.keys(categoryList)[0] as SHOP_CATEGORY);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOffline]);
 
   return (

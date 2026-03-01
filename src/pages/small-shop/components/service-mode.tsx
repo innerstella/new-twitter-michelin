@@ -8,6 +8,7 @@ const ServiceMode = () => {
 
   useEffect(() => {
     setCategory(isOffline ? SHOP_CATEGORY.RESTAURANT : SHOP_CATEGORY.FRUITES);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOffline]);
 
   return (
