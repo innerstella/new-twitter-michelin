@@ -11,7 +11,7 @@ interface NotiData {
 const Noti = ({ badgeText, text }: NotiData) => {
   return (
     <Callout.Root size="1" color="gray">
-      <Flex direction="row" gap="2" align="start">
+      <Flex direction="row" gap="2" align="center">
         <Callout.Icon>
           <Badge size="1">{badgeText}</Badge>
         </Callout.Icon>
