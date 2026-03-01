@@ -14,7 +14,7 @@ const useFetchShops = (): { shops: Shop[]; isLoading: boolean } => {
     const fetchShops = async () => {
       setIsLoading(true);
       const { data } = await supabase
-        .from('shop')
+        .from('shop_v2')
         .select('*')
         .eq('is_offline', isOffline)
         .eq('category', currCategory);

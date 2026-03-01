@@ -1,5 +1,5 @@
 import { Link, Spacer } from '@chakra-ui/react';
-import { ScrollArea, Text } from '@radix-ui/themes';
+import { Button, Flex, Text } from '@radix-ui/themes';
 import { useShopFilterStore } from '../../store/shopFilterStore';
 import { MainContainer } from '../../styles/main';
 import Template from '../../templates';
@@ -8,13 +8,25 @@ import Banner from '../home/components/Banner';
 import Noti from '../home/components/Noti';
 import { ServiceMode } from './components';
 import CategoryNav from './components/category-nav';
+import ShopMap from './components/map';
 import { ShopCard } from './components/shop-card';
-import { ShopCardSkeleton } from './components/shop-card-skeleton';
+import ShopListSheet from './components/shop-list-sheet';
 import useFetchShops from './hooks/useFetchShops';
+import LOCATION_ICON from './location.svg';
 
 const SmallShopPage = () => {
-  const { isOffline } = useShopFilterStore();
   const { shops, isLoading } = useFetchShops();
+  const { setCurrentLocation, isOffline } = useShopFilterStore();
+
+  const handleLocationClick = () => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setCurrentLocation({ lat: coords.latitude, lng: coords.longitude });
+      },
+      (err) => console.error('위치 권한 거부됨', err)
+    );
+  };
 
   return (
     <Template>
@@ -39,23 +51,35 @@ const SmallShopPage = () => {
         <Spacer height="10px" />
         <Banner />
         <Spacer height="20px" />
-        <ServiceMode />
+        <Flex justify="between" align="center">
+          <ServiceMode />
+          <Flex align="center" gap="2">
+            <Button
+              color="teal"
+              variant="solid"
+              size="2"
+              onClick={handleLocationClick}
+            >
+              <img src={LOCATION_ICON} alt="location" />
+              <Text size="2">현재 위치</Text>
+            </Button>
+          </Flex>
+        </Flex>
         <CategoryNav />
-        <ScrollArea style={{ height: 'calc(100dvh - 350px)' }}>
-          {isLoading
-            ? Array.from({ length: 4 }).map((_, i) => (
-                <div key={i}>
-                  <Spacer height="10px" />
-                  <ShopCardSkeleton />
-                </div>
-              ))
-            : shops.map((shop) => (
-                <div key={shop.id}>
-                  <Spacer height="10px" />
-                  <ShopCard shop={shop} isOffline={isOffline} />
-                </div>
-              ))}
-        </ScrollArea>
+        <Spacer height="10px" />
+        {isOffline ? (
+          <>
+            <ShopMap data={shops} />
+            <ShopListSheet shops={shops} isLoading={isLoading} />
+          </>
+        ) : (
+          shops.map((shop) => (
+            <>
+              <Spacer height="10px" />
+              <ShopCard key={shop.id} shop={shop} isOffline={isOffline} />
+            </>
+          ))
+        )}
       </MainContainer>
     </Template>
   );

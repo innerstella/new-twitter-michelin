@@ -1,6 +1,7 @@
 import { Link } from '@chakra-ui/react';
 import { Box, Card, Flex, Text } from '@radix-ui/themes';
 import { Shop } from '../../../model/shop';
+import { useShopFilterStore } from '../../../store/shopFilterStore';
 import X_LOGO from '../x-logo.svg';
 
 interface ShopCardProps {
@@ -9,8 +10,20 @@ interface ShopCardProps {
 }
 
 export const ShopCard = ({ shop, isOffline }: ShopCardProps) => {
+  const { selectedShop, setSelectedShop } = useShopFilterStore();
+  const isSelected = selectedShop?.id === shop.id;
+
   return (
-    <Card size="2" style={{ width: '340px', overflow: 'hidden' }}>
+    <Card
+      size="2"
+      style={{
+        width: '340px',
+        overflow: 'hidden',
+        cursor: 'pointer',
+        backgroundColor: isSelected ? 'var(--green-5)' : 'white',
+      }}
+      onClick={() => setSelectedShop(isSelected ? null : shop)}
+    >
       <Flex
         direction="column"
         gap="3"
