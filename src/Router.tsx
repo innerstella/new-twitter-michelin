@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GroupPage from './pages/group';
 import GroupListPage from './pages/group-list';
-import HotpotDetailPage from './pages/hotpot/detail';
-import HotpotPage from './pages/hotpot';
 import HomePage from './pages/home';
+import HotpotPage from './pages/hotpot';
+import HotpotDetailPage from './pages/hotpot/detail';
 import LogPage from './pages/log';
 import RecommendPage from './pages/recommend';
+import SmallShopPage from './pages/small-shop';
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/log" element={<LogPage />} />
         <Route path="/hotpot" element={<HotpotPage />} />
         <Route path="/hotpot/detail/:id" element={<HotpotDetailPage />} />
+        <Route path="/smallshop" element={<SmallShopPage />} />
       </Routes>
     </BrowserRouter>
   );

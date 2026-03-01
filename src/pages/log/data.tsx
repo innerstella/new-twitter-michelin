@@ -2,6 +2,12 @@ import { Link } from '@chakra-ui/react';
 
 export const LOG_DATA = [
   {
+    date: '2026/03/01',
+    version: '1.3.2',
+    type: 'feature',
+    changes: '외부 페이지 이동 없이 소상공인 가게 찾기에 접속 가능합니다.',
+  },
+  {
     date: '2026/02/25',
     version: '1.3.1',
     type: 'feature',

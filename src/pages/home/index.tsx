@@ -1,9 +1,10 @@
-import { Link as ChakraLink, Spacer } from '@chakra-ui/react';
+import { Spacer } from '@chakra-ui/react';
 import { Flex, RadioCards, Text } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Search from '../../components/PlaceSearch';
 import Template from '../../templates';
+import LOG_DATA from '../log/data';
 import Banner from './components/Banner';
 import Coffee from './components/Coffee';
 import Header from './components/Header';
@@ -11,7 +12,7 @@ import Noti from './components/Noti';
 import PopupBanner from './components/PopupBanner';
 
 const HomePage = () => {
-  // const { version, changes } = LOG_DATA[0];
+  const { version, changes } = LOG_DATA[0];
 
   return (
     <Template>
@@ -40,17 +41,13 @@ const HomePage = () => {
               </Link>
             </Flex>
             <Flex direction="row" justify="between" width="325px">
-              <RadioCards.Item
-                value="smallshop"
-                style={{ width: '150px' }}
-                onClick={() =>
-                  window.open('https://smallshop-archive.web.app/')
-                }
-              >
-                <Text size="2" weight="bold">
-                  🔔 소상공인 찾기
-                </Text>
-              </RadioCards.Item>
+              <Link to="/smallshop">
+                <RadioCards.Item value="smallshop" style={{ width: '150px' }}>
+                  <Text size="2" weight="bold">
+                    🔔 소상공인 찾기
+                  </Text>
+                </RadioCards.Item>
+              </Link>
               <Link to="/hotpot">
                 <RadioCards.Item value="sauce">
                   <Text size="2" weight="bold">
@@ -68,23 +65,7 @@ const HomePage = () => {
           <Banner />
         </center>
         <Spacer height="20px" />
-        {/* <Noti badgeText={version} text={changes} /> */}
-        <Noti
-          badgeText="이벤트"
-          text={
-            <Text>
-              소상공인이 운영하는 가게 홍보 배너를 게시해드립니다!
-              <br />
-              <ChakraLink
-                href="https://open.kakao.com/o/swA9S8Ud"
-                target="_blank"
-                textDecoration="underline"
-              >
-                🔗 문의 링크
-              </ChakraLink>
-            </Text>
-          }
-        />
+        <Noti badgeText={version} text={<>{changes}</>} />
       </MainContainer>
     </Template>
   );
