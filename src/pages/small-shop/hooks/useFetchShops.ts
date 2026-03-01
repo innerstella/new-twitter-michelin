@@ -5,10 +5,12 @@ import { useShopFilterStore } from '../../../store/shopFilterStore';
 
 const useFetchShops = () => {
   const [shops, setShops] = useState<Shop[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { isOffline, category: currCategory } = useShopFilterStore();
 
   useEffect(() => {
     const fetchShops = async () => {
+      setIsLoading(true);
       const { data } = await supabase
         .from('shop')
         .select('*')
@@ -16,10 +18,11 @@ const useFetchShops = () => {
         .eq('category', currCategory);
 
       setShops(data ?? []);
+      setIsLoading(false);
     };
     fetchShops();
   }, [currCategory, isOffline]);
-  return { shops };
+  return { shops, isLoading };
 };
 
 export default useFetchShops;

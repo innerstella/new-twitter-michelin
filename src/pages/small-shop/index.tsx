@@ -9,12 +9,13 @@ import Noti from '../home/components/Noti';
 import { ServiceMode } from './components';
 import CategoryNav from './components/category-nav';
 import { ShopCard } from './components/shop-card';
+import { ShopCardSkeleton } from './components/shop-card-skeleton';
 import useFetchShops from './hooks/useFetchShops';
 
 const SmallShopPage = () => {
   const { isOffline } = useShopFilterStore();
 
-  const { shops } = useFetchShops();
+  const { shops, isLoading } = useFetchShops();
 
   return (
     <Template>
@@ -42,12 +43,19 @@ const SmallShopPage = () => {
         <ServiceMode />
         <CategoryNav />
         <ScrollArea style={{ height: 'calc(100dvh - 350px)' }}>
-          {shops.map((shop) => (
-            <div key={shop.id}>
-              <Spacer height="10px" />
-              <ShopCard shop={shop} isOffline={isOffline} />
-            </div>
-          ))}
+          {isLoading
+            ? Array.from({ length: 4 }).map((_, i) => (
+                <div key={i}>
+                  <Spacer height="10px" />
+                  <ShopCardSkeleton />
+                </div>
+              ))
+            : shops.map((shop) => (
+                <div key={shop.id}>
+                  <Spacer height="10px" />
+                  <ShopCard shop={shop} isOffline={isOffline} />
+                </div>
+              ))}
         </ScrollArea>
       </MainContainer>
     </Template>
