@@ -14,7 +14,6 @@ import useFetchShops from './hooks/useFetchShops';
 
 const SmallShopPage = () => {
   const { isOffline } = useShopFilterStore();
-
   const { shops, isLoading } = useFetchShops();
 
   return (

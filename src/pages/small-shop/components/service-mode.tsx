@@ -1,22 +1,26 @@
 import { SegmentedControl } from '@radix-ui/themes';
-import { useEffect } from 'react';
 import SHOP_CATEGORY from '../../../model/shop/const/shop-category';
 import { useShopFilterStore } from '../../../store/shopFilterStore';
 
 const ServiceMode = () => {
   const { isOffline, setIsOffline, setCategory } = useShopFilterStore();
 
-  useEffect(() => {
-    setCategory(isOffline ? SHOP_CATEGORY.RESTAURANT : SHOP_CATEGORY.FRUITES);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOffline]);
+  const handleOffline = () => {
+    setIsOffline(true);
+    setCategory(SHOP_CATEGORY.RESTAURANT);
+  };
+
+  const handleOnline = () => {
+    setIsOffline(false);
+    setCategory(SHOP_CATEGORY.FRUITES);
+  };
 
   return (
     <SegmentedControl.Root defaultValue={isOffline ? 'inbox' : 'drafts'}>
-      <SegmentedControl.Item value="inbox" onClick={() => setIsOffline(true)}>
+      <SegmentedControl.Item value="inbox" onClick={handleOffline}>
         오프라인
       </SegmentedControl.Item>
-      <SegmentedControl.Item value="drafts" onClick={() => setIsOffline(false)}>
+      <SegmentedControl.Item value="drafts" onClick={handleOnline}>
         온라인
       </SegmentedControl.Item>
     </SegmentedControl.Root>

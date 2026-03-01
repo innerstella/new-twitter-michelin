@@ -3,12 +3,14 @@ import { supabase } from '../../../lib/supabase';
 import { Shop } from '../../../model/shop';
 import { useShopFilterStore } from '../../../store/shopFilterStore';
 
-const useFetchShops = () => {
+const useFetchShops = (): { shops: Shop[]; isLoading: boolean } => {
   const [shops, setShops] = useState<Shop[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { isOffline, category: currCategory } = useShopFilterStore();
 
   useEffect(() => {
+    let cancelled = false;
+
     const fetchShops = async () => {
       setIsLoading(true);
       const { data } = await supabase
@@ -17,10 +19,16 @@ const useFetchShops = () => {
         .eq('is_offline', isOffline)
         .eq('category', currCategory);
 
-      setShops(data ?? []);
-      setIsLoading(false);
+      if (!cancelled) {
+        setShops(data ?? []);
+        setIsLoading(false);
+      }
     };
     fetchShops();
+
+    return () => {
+      cancelled = true;
+    };
   }, [currCategory, isOffline]);
   return { shops, isLoading };
 };
