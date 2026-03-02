@@ -43,7 +43,7 @@ const HotpotDetailPage = () => {
   }, [id]);
 
   return (
-    <Template showAd={!loading && recipe !== null}>
+    <Template>
       <Wrapper>
         <Bar title={recipe?.name} />
         <Badge size="2" color="gray">
