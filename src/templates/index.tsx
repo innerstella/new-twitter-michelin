@@ -1,24 +1,19 @@
-import { ReactNode } from "react"
-import styled from "styled-components"
-import DisplayAds from "../components/DisplayAd"
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 interface TemplateProps {
-  children: ReactNode
-  showAd?: boolean
+  children: ReactNode;
 }
 
-const Template = ({ children, showAd = true }: TemplateProps) => {
+const Template = ({ children }: TemplateProps) => {
   return (
     <Background>
-      <Content>
-        {children}
-        {showAd && <DisplayAds />}
-      </Content>
+      <Content>{children}</Content>
     </Background>
-  )
-}
+  );
+};
 
-export default Template
+export default Template;
 
 const Background = styled.div`
   display: flex;
@@ -31,7 +26,7 @@ const Background = styled.div`
     width: 100vw;
     background-color: gray;
   }
-`
+`;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,4 +35,4 @@ const Content = styled.div`
   @media (min-width: 400px) {
     width: 400px;
   }
-`
+`;
