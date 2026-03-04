@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AboutPage from './pages/about';
 import GroupPage from './pages/group';
 import GroupListPage from './pages/group-list';
 import HomePage from './pages/home';
 import HotpotPage from './pages/hotpot';
 import HotpotDetailPage from './pages/hotpot/detail';
 import LogPage from './pages/log';
+import PrivacyPage from './pages/privacy';
 import RecommendPage from './pages/recommend';
 import SmallShopPage from './pages/small-shop';
 
@@ -20,6 +22,8 @@ const AppRouter = () => {
         <Route path="/hotpot" element={<HotpotPage />} />
         <Route path="/hotpot/detail/:id" element={<HotpotDetailPage />} />
         <Route path="/smallshop" element={<SmallShopPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   );
