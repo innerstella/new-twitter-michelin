@@ -21,7 +21,7 @@ export const LOG_DATA = [
       <p>
         생일 홍보 팝업 배너가 추가되었습니다.&nbsp;
         <Link
-          href="https://innerstella.notion.site/affa459f47294cb599b9ccb8e8a9d9ef?source=copy_link"
+          href="https://open.kakao.com/o/swA9S8Ud"
           target="_blank"
           textDecoration="underline"
         >
@@ -34,7 +34,18 @@ export const LOG_DATA = [
     date: '2026/02/23',
     version: '1.3.0',
     type: 'feature',
-    changes: '가게 홍보 배너가 추가되었습니다.',
+    changes: (
+      <p>
+        가게 홍보 배너가 추가되었습니다.&nbsp;
+        <Link
+          href="https://open.kakao.com/o/swA9S8Ud"
+          target="_blank"
+          textDecoration="underline"
+        >
+          🔗 문의 링크
+        </Link>
+      </p>
+    ),
   },
   {
     date: '2026/02/21',
